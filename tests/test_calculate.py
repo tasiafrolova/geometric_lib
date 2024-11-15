@@ -2,6 +2,7 @@ import unittest
 import calculate
 import math
 
+
 class TestCalculate(unittest.TestCase):
 
     def test_calc_invalid_triangle_sides(self):
@@ -88,6 +89,7 @@ class TestCalculate(unittest.TestCase):
         side2 = 8
         with self.assertRaises(AssertionError):
             calculate.calc(figure_type, "area", [side1, side2, -math.sqrt(side1**2 + side2**2)])
+
 
 if __name__ == '__main__':
     unittest.main()
