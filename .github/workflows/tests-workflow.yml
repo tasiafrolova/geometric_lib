@@ -1,0 +1,48 @@
+name: Tests Workflow
+
+on:
+  push:
+    branches:
+      - master
+      - release
+  pull_request:
+    branches:
+      - master
+      - release
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FULL_NAME: "Фролова Таисия Александровна"
+      GROUP_NUMBER: "M3115"
+    
+    steps:
+      # Шаг 1: Клонирование репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Шаг 2: Вывод информации
+      - name: Print information
+        run: |
+          echo "ФИО: ${{ env.FULL_NAME }}"
+          echo "Номер группы: ${{ env.GROUP_NUMBER }}"
+          echo "Ник на Github: ${{ github.actor }}"
+
+      # Шаг 3: Установка Python
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+
+      # Шаг 4: Запуск юнит-тестов
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s /home/runner/work/geometric_lib/geometric_lib/tests
+
+      # Шаг 5: Проверка стиля с использованием flake8
+      - name: Lint code with flake8
+        run: |
+          pip install flake8
+          flake8 --ignore=
