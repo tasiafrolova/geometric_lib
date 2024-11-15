@@ -1,3 +1,7 @@
+import circle
+import triangle
+import square
+
 sizes = {
     'circle-area': 1,
     'circle-perimeter': 1,
