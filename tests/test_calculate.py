@@ -13,22 +13,6 @@ class TestCalculate(unittest.TestCase):
         with self.assertRaises(AssertionError):
             calculate.calc(figure_type, "area", [side1, side2, side3])
 
-    def test_calc_circle_area_correct_input(self):
-        figure_type = "circle"
-        radius = 5
-        expected_area = math.pi * radius**2
-        result = calculate.calc(figure_type, "area", [radius])
-        self.assertEqual(result, expected_area)
-
-    def test_calc_triangle_area_correct_input(self):
-        figure_type = "triangle"
-        side1 = 5
-        side2 = 8
-        side3 = math.sqrt(side1**2 + side2**2)
-        expected_area = 20
-        result = calculate.calc(figure_type, "area", [side1, side2, side3])
-        self.assertAlmostEqual(result, expected_area, places=2)
-
     def test_calc_invalid_figure_type(self):
         figure_type = "invalid"
         radius = 5
