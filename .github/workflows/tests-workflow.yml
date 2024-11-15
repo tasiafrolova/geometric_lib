@@ -39,7 +39,7 @@ jobs:
       # Шаг 4: Запуск юнит-тестов
       - name: Run unit tests
         run: |
-          python -m unittest discover -s C:\Users\t2809\geometric_lib>
+          python -m unittest discover -s tests
 
       # Шаг 5: Проверка стиля с использованием flake8
       - name: Lint code with flake8
