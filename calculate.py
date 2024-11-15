@@ -46,3 +46,4 @@ if __name__ == "__main__":
 
     result = calc(fig, func, size)
     print(f'Result: {result}')
+    
