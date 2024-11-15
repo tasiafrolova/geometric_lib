@@ -19,7 +19,6 @@ def calc(fig, func, size):
     assert expected_args is not None
     assert len(size) == expected_args
     assert all(s >= 0 for s in size)
-    
     if fig == 'triangle':
         a, b, c = size
         assert a + b > c and a + c > b and b + c > a
